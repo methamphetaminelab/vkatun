@@ -15,7 +15,7 @@ async def fetch_comments_and_count(session, post_id, group_id, word):
         'post_id': post_id,
         'count': COMMENTS_PER_REQUEST,
         'access_token': TOKEN,
-        'v': '5.131'
+        'v': '5.199'
     }) as response:
         comments_data = await response.json()
         
@@ -29,7 +29,7 @@ async def fetch_posts(session, group_id, offset):
         'count': POSTS_PER_REQUEST,
         'offset': offset,
         'access_token': TOKEN,
-        'v': '5.131'
+        'v': '5.199'
     }) as response:
         data = await response.json()
     return data
