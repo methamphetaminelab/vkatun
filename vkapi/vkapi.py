@@ -23,8 +23,6 @@ async def fetch_comments_and_count(session, post_id, group_id, word):
     count = sum(comment["text"].lower().count(word.lower()) for comment in comments)
     return count
 
-import aiohttp
-
 async def fetch_posts(session, group_id, offset):
     async with session.get(f'https://api.vk.com/method/wall.get', params={
         'owner_id': -group_id,
